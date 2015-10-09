@@ -1,0 +1,49 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class AgeSort  {
+
+	public static void main(String [] args){
+		Sort s = new Sort("Deepak", 25, "Birlasoft", 65004);
+		Sort s1= new Sort("Puneet", 30 , "Birlasoft", 23568);
+		Sort s2 = new Sort("Ankit", 15 , "Genpact", 56985);
+		Sort s3 = new Sort("Praveen", 35 , "Accenture", 45231);
+		Sort s4 = new Sort("Abhay", 40 , "Fiserv", 98563);
+		Sort s5 = new Sort("Bansi", 65 , "CSC", 85423);
+		Sort s6 = new Sort("Jeevan", 22 , "Adobe", 02136);
+		Sort s7 = new Sort("Ravan", 36 , "Metanest", 42013);
+		Sort s8 = new Sort("Ramesh", 10 , "TCS", 85201);
+		Sort s9 = new Sort("Mahesh", 62 , "Wipro", 74120);
+		Sort s10 = new Sort("Geeta", 41 , "Congnizant", 32056);
+		List<Sort> lsort = new ArrayList<Sort>();
+		lsort.add(s);
+		lsort.add(s1);
+		lsort.add(s2);
+		lsort.add(s3);
+		lsort.add(s4);
+		lsort.add(s5);
+		lsort.add(s6);
+		lsort.add(s7);
+		lsort.add(s8);
+		lsort.add(s9);
+		lsort.add(s10);
+		Collections.sort(lsort,new Comparator<Sort>() {
+
+			@Override
+			public int compare(Sort o1, Sort o2) {
+			
+				return Integer.valueOf(o1.getAge()).compareTo(Integer.valueOf(o2.getAge()));
+			}
+		});
+		
+		for(Sort sl : lsort){
+			System.out.println(sl.getName() + "  " + sl.getAge() + "  " + sl.getCompany() + "  " +sl.getEmpid());
+		}
+	}
+
+	
+}
